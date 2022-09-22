@@ -94,6 +94,43 @@ var_dump($veta);
 $veta2 = "K vložení odstavce používáme tag <p>, nadpisy uvádí značky <h1> až <h6>";
 
 echo htmlspecialchars($veta2);
+
+$arr = ["Karel", "Josef", "Marie"];
+
+var_dump($arr);
+
+$arr[] = "Jitka";
+var_dump($arr);
+
+$arr2 = [
+    "já" => "Milan Vomáčka",
+    "kámoš" => "Franta Novotný",
+    "mrcha" => "Ivana Dolečková",
+];
+
+var_dump($arr2);
+var_dump($arr2["mrcha"]);
+$key = "kámoš";
+echo "Můj nejlepší kamarád je $arr2[$key].";
+
+$arr2["otec"] = "Nýmand";
+var_dump($arr2);
+
+for ($i = 0; $i < count($arr); $i++)
+    echo "$i : $arr[$i]<br>";
+
+
+// nelze - klíče nejsou čísla, je asociativní
+//for ($i = 0; $i < count($arr2); $i++)
+//    echo "$i : $arr2[$i]<br>";
+
+foreach ($arr2 as $key => $item){
+    echo "$key: $item<br>";
+}
+
+
+
 ?>
+
 </body>
 </html>
