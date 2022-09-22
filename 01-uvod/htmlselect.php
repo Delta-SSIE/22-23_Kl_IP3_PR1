@@ -30,6 +30,26 @@ function htmlSelect($name, $options, $selected )
     $result .= "</select>";
     return $result;
 }
+
+function htmlRadio($name, $options, $selected )
+{
+    //<input type='radio' id='bmw' name='auto' value='bmw'><label for='bmw'>BMW</label><br>
+    //<input type='radio' id='skoda' name='auto' value='skoda' checked><label for='skoda'>Škoda</label><br>
+    $result = "<div>";
+    foreach ($options as $key => $displayed)
+    {
+        $checkedHTML = $key === $selected ? " checked" : "";
+
+        $result.="<input type='radio' id='$key' name='$name' value='$key'$checkedHTML>";
+        $result.="<label for='$key'>$displayed</label>";
+        $result.="<br>";
+    }
+    $result .= "</div>";
+    return $result;
+}
+echo htmlRadio( "auto", $options, "skoda" );
+
+
 ?>
 </body>
 </html>
