@@ -24,12 +24,20 @@ function htmlSelect($name, $options, $selected )
         foreach ($options as $key => $displayed)
         {
             $selectHTML = $key === $selected ? " selected" : "";
-            $result .= "<option value='$key'$selectHTML>$displayed</option>";
+            $result .= "<option value='$key'$selectHTML>".htmlspecialchars( $displayed)."</option>";
 //            $result .= "<option value='$key'".($key === $selected ? " selected" : "").">$displayed</option>";
         }
     $result .= "</select>";
     return $result;
 }
+
+$options2 = [
+    "p" => "<p>",
+    "h1" => "<h1>",
+    "div" => "<div>",
+    "span" => "<span>"
+];
+echo htmlSelect( "tag", $options2, "div" );
 
 function htmlRadio($name, $options, $selected )
 {
@@ -47,9 +55,9 @@ function htmlRadio($name, $options, $selected )
     $result .= "</div>";
     return $result;
 }
-echo htmlRadio( "auto", $options, "skoda" );
-
-
-?>
+//echo htmlRadio( "auto", $options, "skoda" );
+//
+//
+//?>
 </body>
 </html>
