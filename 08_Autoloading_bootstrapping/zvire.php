@@ -1,4 +1,13 @@
 <?php
+function my_autoloader($classname){
+    require_once "./inc/$classname.class.php";
+}
+
+spl_autoload_register("my_autoloader");
+
+//require_once "./inc/Zvire.class.php";
+//require_once "./inc/Krava.class.php";
+//require_once "./inc/Slon.class.php";
 
 //class Tele extends Krava {}
 
